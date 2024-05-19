@@ -14,6 +14,25 @@ public static int sumElements(List<Integer> a, List<Integer> b) {
     }
     return total; 
 }
+public static boolean task3(String input) { //matching brackets
+        Stack<Character> stack = new Stack<>();
 
+        for (char ch : input.toCharArray()){
+            if (ch == '(') {
+                stack.push(ch);
+            }
+
+            else if (ch == ')') {
+                if (stack.isEmpty()){
+                    return false;
+                }
+                stack.pop();
+            }
+
+        }
+        return stack.isEmpty() ;
+
+    }    
+    
 
 }
