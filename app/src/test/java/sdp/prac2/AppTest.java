@@ -7,4 +7,21 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
+    
+    @Test 
+    void task5Test(){
+        //Arrange
+        SimpleFunctions f = new SimpleFunctions();
+        int [] lst = [1,2,3,4,5];
+        //Act
+        assertEquals(f.task5(lst), true); //Assert
+    }
+
+    @Test 
+    void task5Test(){
+        //Arrange
+        SimpleFunctions f = new SimpleFunctions();
+        int [] lst = [1,2,3,3,34,55];
+        //Act
+        assertEquals(f.task5(lst), false); //Assert
 }
