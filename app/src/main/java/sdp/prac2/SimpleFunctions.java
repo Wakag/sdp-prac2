@@ -14,23 +14,20 @@ public class SimpleFunctions {
                 int roundedNumber = ((number / 100) + 1) * 100;
                 roundedNumbers.add(roundedNumber);
             }
-=======
-    public SimpleFunctions() {
-
-        public static int [] task4(int [] a, int [] b){
-            if (a.length != b.length){
-                return null;
-            }
-            else{
-                int [] answer = new int[a.length];
-
-                for(int i = 0; i < a.length; i++){
-                    answer[i] = a[i] + b[a.length - 1- i];
-                    }
-                    return answer;
-                }
->>>>>>> g21H8394.Task4
         }
         return roundedNumbers;
     }
+
+    public static int [] task4(int [] a, int [] b){
+        if (a.length != b.length){
+            return null;
+        } else {
+            int [] answer = new int[a.length];
+
+            for(int i = 0; i < a.length; i++){
+                answer[i] = a[i] + b[a.length - 1- i];
+            }
+                return answer;
+            }
+        }
 }
