@@ -44,4 +44,28 @@ class AppTest {
         actualSum = SimpleFunctions.sumElements(a, b);
         assertEquals(expectedSum, actualSum);
     }
+     
+  @Test void testTask4EqualLength() { //tests task4 for equal length lists
+        // Test case 1
+        //Arrange
+        List<Integer> a = Arrays.asList(7, 8, 6);
+        List<Integer> b = Arrays.asList(2, 1, 5);
+        List<Integer> expectedResult = [35, 8, 12] ; //7x5 ,8x1, 6x2
+        //Act
+        List<Integer> actualSum = SimpleFunctions.task4(a, b);
+        //Assert
+        assertEquals(expectedSum, actualSum);
+    }
+
+    @Test void testTask4DifferentLength() { //tests task4 for different length lists
+        // Test case 2
+        //Arrange
+        List<Integer> a = Arrays.asList(7, 8, 6, 8);
+        List<Integer> b = Arrays.asList(2, 1, 5);
+        List<Integer> expectedResult = null ;
+        //Act
+        List<Integer> actualSum = SimpleFunctions.task4(a, b);
+        //Assert
+        assertEquals(expectedSum, actualSum);
+    }   
 }
