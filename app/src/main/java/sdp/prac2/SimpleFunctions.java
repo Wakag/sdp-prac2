@@ -15,7 +15,7 @@ public class SimpleFunctions {
         }
         return total;
     }
-    public static List<String> Task2(List<String> list) {
+    public static List<String> task2(List<String> list) {
         List<String> result = new ArrayList<>();
         for (String str : list) {
             if (str.length() > 1) {
