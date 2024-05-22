@@ -96,6 +96,41 @@ class AppTest {
     }
 
 
+//Task 3 tests
+
+    @Test
+    public void testMatchingBrackets() {
+        assertTrue(Task3.task3("()"));
+        assertTrue(Task3.task3("(())"));
+        assertTrue(Task3.task3("((()))"));
+        assertTrue(Task3.task3("(()())"));
+        assertTrue(Task3.task3("a(b)c(d)e(f)g"));
+    }
+
+    @Test
+    public void testUnmatchedBrackets() {
+        assertFalse(Task3.task3("("));
+        assertFalse(Task3.task3(")"));
+        assertFalse(Task3.task3("(()"));
+        assertFalse(Task3.task3("())"));
+        assertFalse(Task3.task3(")("));
+        assertFalse(Task3.task3("(()))("));
+        assertFalse(Task3.task3("a(b)c)d(e(f)g"));
+    }
+
+    @Test
+    public void testEmptyString() {
+        assertTrue(Task3.task3(""));
+    }
+
+    @Test
+    public void testNoBrackets() {
+        assertTrue(Task3.task3("abcdefg"));
+    }
+}
+
+
+
   //Task 4 tests
 
   @Test
