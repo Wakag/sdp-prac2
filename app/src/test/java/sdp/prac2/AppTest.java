@@ -6,6 +6,9 @@ package sdp.prac2;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 class AppTest {
      @Test
     public void testTask1() {
@@ -67,5 +70,26 @@ class AppTest {
         List<Integer> actualSum = SimpleFunctions.task4(a, b);
         //Assert
         assertEquals(expectedSum, actualSum);
+    }   
+    @Test void testTask5True() { //tests for task 5 expecting a sorted list
+        // Test case 1
+        //Arrange
+        int [] lst = {1,2,3,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+        boolean expectedResult = true;
+        //Act
+        boolean actualResult = SimpleFunctions.task5(lst);
+        //Assert
+        assertEquals(expectedResult, actualResult);
+    }   
+
+    @Test void testTask5False() { //test for task 5 expecting a unsorted list
+        // Test case 2
+        //Arrange
+        int [] lst = {83, 12, 47, 5, 67, 29, 54, 91, 38, 22, 76, 8, 43, 65, 31, 97, 18, 71, 52, 34, 6, 85, 26, 93, 49, 11, 58, 32, 79, 14, 66, 25, 89, 37, 10, 73, 53, 20, 81, 45, 3, 90, 15, 61, 27, 99, 39, 7, 74, 55};
+        boolean expectedResult = false;
+        //Act
+        boolean actualResult = SimpleFunctions.task5(lst);
+        //Assert
+        assertEquals(expectedResult, actualResult);
     }   
 }

@@ -3,7 +3,7 @@ package sdp.prac2;
 import java.util.*;
 
 public class SimpleFunctions {
-<<<<<<< HEAD
+
     public SimpleFunctions() {}
     public static List<Integer> Task6(List<Integer> numbers) {
         List<Integer> roundedNumbers = new ArrayList<>();
@@ -25,7 +25,7 @@ public class SimpleFunctions {
             int [] answer = new int[a.length];
 
             for(int i = 0; i < a.length; i++){
-                answer[i] = a[i] + b[a.length - 1- i];
+                answer[i] = a[i] * b[a.length - 1- i];
             }
                 return answer;
             }
