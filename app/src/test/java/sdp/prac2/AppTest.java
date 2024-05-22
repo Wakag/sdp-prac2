@@ -47,7 +47,62 @@ class AppTest {
         actualSum = SimpleFunctions.sumElements(a, b);
         assertEquals(expectedSum, actualSum);
     }
-     
+     import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+
+public class SimpleFunctionsTest {
+
+    // Tests for sumElements
+
+    @Test void testSumElements_NormalCase() {
+        List<Integer> a = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> b = Arrays.asList(0, 1, 2);
+        int result = SimpleFunctions.sumElements(a, b);
+        assertEquals(6, result); // 1 + 2 + 3
+    }
+
+    @Test void testSumElements_EmptyIndexList() {
+        List<Integer> a = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> b = Collections.emptyList();
+        int result = SimpleFunctions.sumElements(a, b);
+        assertEquals(0, result);
+    }
+
+    @Test void testSumElements_IndexOutOfBounds() {
+        List<Integer> a = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> b = Arrays.asList(10, 20, 30);
+        int result = SimpleFunctions.sumElements(a, b);
+        assertEquals(0, result);
+    }
+
+    @Test void testSumElements_NegativeIndex() {
+        List<Integer> a = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> b = Arrays.asList(-1, -2, -3);
+        int result = SimpleFunctions.sumElements(a, b);
+        assertEquals(0, result);
+    }
+
+    @Test void testSumElements_MixedIndices() {
+        List<Integer> a = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> b = Arrays.asList(-1, 0, 2, 4, 10);
+        int result = SimpleFunctions.sumElements(a, b);
+        assertEquals(9, result); // 1 + 3 + 5
+    }
+
+    @Test void testSumElements_DuplicateIndices() {
+        List<Integer> a = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> b = Arrays.asList(1, 1, 1, 1);
+        int result = SimpleFunctions.sumElements(a, b);
+        assertEquals(8, result); // 2 + 2 + 2 + 2
+    }
+
+
+
   @Test void testTask4EqualLength() { //tests task4 for equal length lists
         // Test case 1
         //Arrange
