@@ -10,6 +10,8 @@ import java.util.Arrays;
 import java.util.List;
 
 class AppTest {
+
+     //Task 1 tests
      @Test
     public void testTask1() {
         // Test case 1: Valid indexes in range
@@ -49,7 +51,7 @@ class AppTest {
     }
 
      
-    // Tests for task2
+    // Task 2 tests
 
     @Test void testTask2_NormalCase() {
         List<String> input = Arrays.asList("hello", "world", "java");
@@ -94,31 +96,36 @@ class AppTest {
     }
 
 
+  //Task 4 tests
 
+  @Test
+    public void testTask4() {
+        int[] a = {7, 8, 6};
+        int[] b = {2, 1, 5};
 
-  @Test void testTask4EqualLength() { //tests task4 for equal length lists
-        // Test case 1
-        //Arrange
-        List<Integer> a = Arrays.asList(7, 8, 6);
-        List<Integer> b = Arrays.asList(2, 1, 5);
-        List<Integer> expectedResult = [35, 8, 12] ; //7x5 ,8x1, 6x2
-        //Act
-        List<Integer> actualSum = SimpleFunctions.task4(a, b);
-        //Assert
-        assertEquals(expectedSum, actualSum);
+        int[] result = SimpleFunctions.task4(a, b);
+        List<Integer> expectedResult = Arrays.asList(35, 8, 12); // 7x5, 8x1, 6x2
+
+        // Convert the result array to a List for easy comparison
+        List<Integer> resultList = Arrays.asList(result[0], result[1], result[2]);
+
+        assertEquals(expectedResult, resultList);
     }
 
     @Test void testTask4DifferentLength() { //tests task4 for different length lists
         // Test case 2
         //Arrange
-        List<Integer> a = Arrays.asList(7, 8, 6, 8);
-        List<Integer> b = Arrays.asList(2, 1, 5);
+        int[] a = {7, 8, 6,8};
+        int[] b = {2, 1, 5};
+        
         List<Integer> expectedResult = null ;
         //Act
-        List<Integer> actualSum = SimpleFunctions.task4(a, b);
+        int [] actualResult = SimpleFunctions.task4(a, b);
         //Assert
-        assertEquals(expectedSum, actualSum);
-    }   
+        assertEquals(expectedResult, actualResult);
+    } 
+
+    //Task 5 tests
     @Test void testTask5True() { //tests for task 5 expecting a sorted list
         // Test case 1
         //Arrange
