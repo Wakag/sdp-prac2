@@ -55,51 +55,112 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+
 public class SimpleFunctionsTest {
 
     // Tests for sumElements
 
-    @Test void testSumElements_NormalCase() {
+    @Test
+    public void testSumElements_NormalCase() {
         List<Integer> a = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> b = Arrays.asList(0, 1, 2);
         int result = SimpleFunctions.sumElements(a, b);
         assertEquals(6, result); // 1 + 2 + 3
     }
 
-    @Test void testSumElements_EmptyIndexList() {
+    @Test
+    public void testSumElements_EmptyIndexList() {
         List<Integer> a = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> b = Collections.emptyList();
         int result = SimpleFunctions.sumElements(a, b);
         assertEquals(0, result);
     }
 
-    @Test void testSumElements_IndexOutOfBounds() {
+    @Test
+    public void testSumElements_IndexOutOfBounds() {
         List<Integer> a = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> b = Arrays.asList(10, 20, 30);
         int result = SimpleFunctions.sumElements(a, b);
         assertEquals(0, result);
     }
 
-    @Test void testSumElements_NegativeIndex() {
+    @Test
+    public void testSumElements_NegativeIndex() {
         List<Integer> a = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> b = Arrays.asList(-1, -2, -3);
         int result = SimpleFunctions.sumElements(a, b);
         assertEquals(0, result);
     }
 
-    @Test void testSumElements_MixedIndices() {
+    @Test
+    public void testSumElements_MixedIndices() {
         List<Integer> a = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> b = Arrays.asList(-1, 0, 2, 4, 10);
         int result = SimpleFunctions.sumElements(a, b);
         assertEquals(9, result); // 1 + 3 + 5
     }
 
-    @Test void testSumElements_DuplicateIndices() {
+    @Test
+    public void testSumElements_DuplicateIndices() {
         List<Integer> a = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> b = Arrays.asList(1, 1, 1, 1);
         int result = SimpleFunctions.sumElements(a, b);
         assertEquals(8, result); // 2 + 2 + 2 + 2
     }
+
+    // Tests for task2
+
+    @Test void testTask2_NormalCase() {
+        List<String> input = Arrays.asList("hello", "world", "java");
+        List<String> expected = Arrays.asList("ello", "orld", "ava");
+        List<String> result = SimpleFunctions.task2(input);
+        assertEquals(expected, result);
+    }
+
+    @Test void testTask2_EmptyList() {
+        List<String> input = Collections.emptyList();
+        List<String> expected = Collections.emptyList();
+        List<String> result = SimpleFunctions.task2(input);
+        assertEquals(expected, result);
+    }
+
+    @Test void testTask2_SingleCharacterStrings() {
+        List<String> input = Arrays.asList("a", "b", "c");
+        List<String> expected = Collections.emptyList();
+        List<String> result = SimpleFunctions.task2(input);
+        assertEquals(expected, result);
+    }
+
+    @Test void testTask2_MixedLengthStrings() {
+        List<String> input = Arrays.asList("a", "ab", "abc", "abcd");
+        List<String> expected = Arrays.asList("b", "bc", "bcd");
+        List<String> result = SimpleFunctions.task2(input);
+        assertEquals(expected, result);
+    }
+
+    @Test void testTask2_StringsContainingSpaces() {
+        List<String> input = Arrays.asList("a ", " ab", "abc ");
+        List<String> expected = Arrays.asList(" ", "ab", "bc ");
+        List<String> result = SimpleFunctions.task2(input);
+        assertEquals(expected, result);
+    }
+
+    @Test void testTask2_EmptyStrings() {
+        List<String> input = Arrays.asList("", "a", "ab", "", "abc");
+        List<String> expected = Arrays.asList("b", "bc");
+        List<String> result = SimpleFunctions.task2(input);
+        assertEquals(expected, result);
+    }
+
 
 
 
