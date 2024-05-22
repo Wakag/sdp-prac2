@@ -5,6 +5,9 @@ package sdp.prac2;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.Collections;
 
 import java.util.Arrays;
 import java.util.List;
@@ -53,47 +56,56 @@ class AppTest {
      
     // Task 2 tests
 
-    @Test void testTask2_NormalCase() {
+    @Test 
+    public void testTask2_NormalCase() {
         List<String> input = Arrays.asList("hello", "world", "java");
         List<String> expected = Arrays.asList("ello", "orld", "ava");
         List<String> result = SimpleFunctions.task2(input);
         assertEquals(expected, result);
     }
 
-    @Test void testTask2_EmptyList() {
+    @Test 
+    public void testTask2_EmptyList() {
         List<String> input = Collections.emptyList();
         List<String> expected = Collections.emptyList();
         List<String> result = SimpleFunctions.task2(input);
         assertEquals(expected, result);
     }
 
-    @Test void testTask2_SingleCharacterStrings() {
+    @Test 
+    public void testTask2_SingleCharacterStrings() {
         List<String> input = Arrays.asList("a", "b", "c");
         List<String> expected = Collections.emptyList();
         List<String> result = SimpleFunctions.task2(input);
         assertEquals(expected, result);
     }
 
-    @Test void testTask2_MixedLengthStrings() {
+    @Test 
+    public void testTask2_MixedLengthStrings() {
         List<String> input = Arrays.asList("a", "ab", "abc", "abcd");
         List<String> expected = Arrays.asList("b", "bc", "bcd");
         List<String> result = SimpleFunctions.task2(input);
         assertEquals(expected, result);
     }
 
-    @Test void testTask2_StringsContainingSpaces() {
+    @Test 
+    public void testTask2_StringsContainingSpaces() {
         List<String> input = Arrays.asList("a ", " ab", "abc ");
         List<String> expected = Arrays.asList(" ", "ab", "bc ");
         List<String> result = SimpleFunctions.task2(input);
         assertEquals(expected, result);
     }
 
-    @Test void testTask2_EmptyStrings() {
+    @Test 
+    public void testTask2_EmptyStrings() {
         List<String> input = Arrays.asList("", "a", "ab", "", "abc");
         List<String> expected = Arrays.asList("b", "bc");
         List<String> result = SimpleFunctions.task2(input);
         assertEquals(expected, result);
     }
+    
+
+   
 
 
 //Task 3 tests
